@@ -1,5 +1,11 @@
 {
   "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true,
+    "jest": true
+  },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": "./tsconfig.json",
@@ -8,13 +14,15 @@
     }
   },
   "extends": [
+    "next/core-web-vitals",
     "airbnb",
     "airbnb-typescript",
-    "next/core-web-vitals",
-    "plugin:prettier/recommended",
-    "plugin:tailwindcss/recommended"
+    "plugin:tailwindcss/recommended",
+    "plugin:testing-library/react",
+    "plugin:jest-dom/recommended",
+    "plugin:prettier/recommended"
   ],
-  "plugins": ["tailwindcss"],
+  "plugins": ["tailwindcss", "testing-library", "jest-dom", "prettier"],
   "ignorePatterns": ["./node_modules/*", "./.next/*", "./out/*", "./public/*"],
   "rules": {
     "prettier/prettier": ["error", {}, { "usePrettierrc": true }],

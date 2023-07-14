@@ -29,6 +29,34 @@
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": ["warn", { "extensions": [".ts", ".tsx"] }],
     "import/prefer-default-export": "off",
-    "tailwindcss/classname-order": "off" // Use prettier instead
+    "tailwindcss/classname-order": "off", // Use prettier instead
+    "import/order": [
+      "error",
+      {
+        "groups": ["type", "builtin", "external", "internal"],
+        "pathGroups": [
+          {
+            "pattern": "@/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "react",
+            "group": "builtin",
+            "position": "after"
+          },
+          {
+            "pattern": "react-dom",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react", "react-dom"],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ]
   }
 }

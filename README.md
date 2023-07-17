@@ -1,11 +1,12 @@
-## Packages
+## Includes
 
 - TypeScript
 - Next.js v13 (AppRouter)
-- ESLint
+- TailwindCSS
+- ESLint (airbnb)
 - Pretter
-- TailwindCS
 - Jest
+- MDXComponent
 
 ## Getting Started
 

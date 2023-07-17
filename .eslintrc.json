@@ -28,34 +28,44 @@
     "prettier/prettier": ["error", {}, { "usePrettierrc": true }],
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": ["warn", { "extensions": [".ts", ".tsx"] }],
-    "import/prefer-default-export": "off",
     "tailwindcss/classname-order": "off", // Use prettier instead
+    "import/prefer-default-export": "off",
     "import/order": [
       "error",
       {
-        "groups": ["type", "builtin", "external", "internal"],
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "type",
+          "unknown"
+        ],
         "pathGroups": [
           {
-            "pattern": "@/**",
-            "group": "internal",
-            "position": "after"
-          },
-          {
-            "pattern": "react",
+            "pattern": "{next*,next*/**}",
             "group": "builtin",
             "position": "after"
           },
           {
-            "pattern": "react-dom",
+            "pattern": "{react*,react*/**}",
             "group": "external",
             "position": "before"
+          },
+          {
+            "pattern": "@/**",
+            "group": "internal",
+            "position": "after"
           }
         ],
-        "pathGroupsExcludedImportTypes": ["react", "react-dom"],
+        "pathGroupsExcludedImportTypes": ["next", "react", "@/**"],
         "alphabetize": {
           "order": "asc",
           "caseInsensitive": true
-        }
+        },
+        "newlines-between": "always"
       }
     ]
   }
